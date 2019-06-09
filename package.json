@@ -1,0 +1,28 @@
+{
+  "name": "naipi",
+  "version": "1.0.0",
+  "description": "conlang api",
+  "main": "napi.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corbineau/Naipi.git"
+  },
+  "author": "Rabbit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Corbineau/Naipi/issues"
+  },
+  "homepage": "https://github.com/Corbineau/Naipi#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "googleapis": "^39.2.0",
+    "handlebars": "^4.1.2",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.7"
+  }
+}
