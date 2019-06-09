@@ -67,7 +67,7 @@ function getNewToken(oAuth2Client, callback) {
 }
 
 /**
- * Prints the names and majors of students in a sample spreadsheet:
+ 
  * @see https://docs.google.com/spreadsheets/d/1Ty1JdkOMRFX52RHLB7xBkU4bPsVneJnjTbDO8sK2aRk/edit
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
