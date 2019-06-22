@@ -5,7 +5,10 @@
 // ==============================================================================
 
 var express = require("express");
-// var config = require("./config");
+var config = require("./connection.js");
+var bodyParser = require("body-parser")
+var mongojs = require("mongojs");
+var routes = require("./routes");
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
@@ -18,13 +21,21 @@ var app = express();
 // Sets an initial port. We"ll use this later in our listener
 var PORT = process.env.PORT || 3000;
 
-// Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// ================================================================================
+// DATABASE
+// Sets up Storage using Mongo
+// ================================================================================
+
+
+// Use mongojs to hook the database to the db variable
+var db = mongojs(config.databade);
+
 
 // ================================================================================
 // ROUTER
@@ -33,9 +44,9 @@ app.use(express.json());
 // ================================================================================
 
 // Import routes and give the server access to them.
-var routes = require("./controller/controller.js");
 
 app.use(routes);
+
 
 // Static directory
 app.use(express.static("./public"));
@@ -45,7 +56,7 @@ app.use(express.static("./public"));
 // The below code effectively "starts" our server
 // =============================================================================
 
-app.listen(PORT, function() {
-  
-  console.log("App listening on PORT: " + PORT);
-});
+
+  app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+  });

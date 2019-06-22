@@ -4,7 +4,7 @@
   "description": "conlang api",
   "main": "napi.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,9 +20,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "googleapis": "^39.2.0",
-    "handlebars": "^4.1.2",
-    "mysql": "^2.17.1",
-    "mysql2": "^1.6.5",
-    "sequelize": "^5.8.7"
+    "mongojs": "^2.6.0",
+    "path": "^0.12.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
